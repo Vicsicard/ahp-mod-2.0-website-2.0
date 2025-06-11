@@ -1,0 +1,260 @@
+<!-- FAQ Section -->
+<section class="faq" id="faq">
+    <style>
+        .faq {
+            background-color: #f9fafb;
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .faq-subtitle {
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .faq-title {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-description {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--gray-dark);
+            font-size: 1.125rem;
+            font-weight: 400;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.125rem;
+        }
+
+        .faq-question svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-answer p {
+            margin-bottom: 1.5rem;
+            color: var(--gray-dark);
+            line-height: 1.7;
+        }
+
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            opacity: 1;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-cta {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .faq-btn {
+            background: var(--gradient-primary);
+            color: white;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+        }
+
+        .faq-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 20px -3px rgba(99, 102, 241, 0.4);
+        }
+
+        .faq-btn svg {
+            width: 20px;
+            height: 20px;
+            margin-left: 0.75rem;
+        }
+    </style>
+
+    <div class="faq-sacred-geometry"></div>
+    
+    <div class="container">
+        <div class="faq-header">
+            <p class="faq-subtitle">Questions & Answers</p>
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <p class="faq-description">
+                Find answers to common questions about the AI Handshake Protocol and how it can benefit your website.
+            </p>
+        </div>
+
+        <div class="faq-grid">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is the AI Handshake Protocol?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>The AI Handshake Protocol (AHP) is the bridge between your website and AI systems, ensuring proper recognition, attribution, and monetization.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item slide-up delay-400">
+                <div class="faq-question">
+                    <span>Will AHP slow down my website?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>No. AHP is designed to be lightweight (less than 10KB) and loads asynchronously, so it won't affect your website's performance or loading speed. It's compatible with any website platform or content management system.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item slide-up delay-500">
+                <div class="faq-question">
+                    <span>How does AHP improve my website's AI visibility?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>AHP creates a standardized communication channel between your website and AI systems. It provides structured metadata about your content, ensuring proper attribution, enhancing discoverability, and enabling AI systems to better understand and represent your content accurately.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item slide-up delay-600">
+                <div class="faq-question">
+                    <span>Which AI systems currently support AHP?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>AHP is currently supported by major AI systems including ChatGPT, Claude, Bard, and several other leading AI platforms. Our team continuously works with AI providers to expand compatibility and ensure your content is properly recognized across the AI ecosystem.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="faq-item slide-up delay-700">
+                <div class="faq-question">
+                    <span>How does the monetization feature work?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>AHP enables content creators to monetize AI usage of their content through our partnership network. When AI systems use your content for training or to generate responses, you can receive compensation based on usage metrics. The monetization dashboard allows you to track usage, set pricing tiers, and manage revenue streams from AI interactions.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 6 -->
+            <div class="faq-item slide-up delay-800">
+                <div class="faq-question">
+                    <span>Is there a free version of AHP?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! The basic AI Handshake Protocol and weekly analytics reports are completely free to use. There's no credit card required and no subscription needed. We only charge for premium features when you decide they're worth implementing for your specific needs.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-cta slide-up delay-900">
+            <a href="#install" class="faq-btn">
+                Install AHP Now
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Toggle active class on the clicked item
+                    item.classList.toggle('active');
+                    
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</section>

@@ -1,0 +1,35 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Flower of Life Background Pattern -->
+  <defs>
+    <pattern id="flowerOfLife" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <!-- Center circle -->
+      <circle cx="15" cy="15" r="5" stroke="rgba(129, 140, 248, 0.2)" stroke-width="0.5" fill="none"/>
+      <!-- Surrounding circles -->
+      <circle cx="15" cy="5" r="5" stroke="rgba(129, 140, 248, 0.2)" stroke-width="0.5" fill="none"/>
+      <circle cx="23.66" cy="10" r="5" stroke="rgba(129, 140, 248, 0.2)" stroke-width="0.5" fill="none"/>
+      <circle cx="23.66" cy="20" r="5" stroke="rgba(129, 140, 248, 0.2)" stroke-width="0.5" fill="none"/>
+      <circle cx="15" cy="25" r="5" stroke="rgba(129, 140, 248, 0.2)" stroke-width="0.5" fill="none"/>
+      <circle cx="6.34" cy="20" r="5" stroke="rgba(129, 140, 248, 0.2)" stroke-width="0.5" fill="none"/>
+      <circle cx="6.34" cy="10" r="5" stroke="rgba(129, 140, 248, 0.2)" stroke-width="0.5" fill="none"/>
+    </pattern>
+    <linearGradient id="paint0_linear" x1="5" y1="20" x2="35" y2="20" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#818CF8" />
+      <stop offset="1" stop-color="#6366F1" />
+    </linearGradient>
+    <mask id="flowerMask">
+      <circle cx="20" cy="20" r="15" fill="white" />
+    </mask>
+  </defs>
+  
+  <!-- Main circle with Flower of Life pattern -->
+  <circle cx="20" cy="20" r="15" fill="url(#paint0_linear)" />
+  <rect x="5" y="5" width="30" height="30" fill="url(#flowerOfLife)" mask="url(#flowerMask)" />
+  
+  <!-- Handshake symbol -->
+  <path d="M15 15V25M15 15H12M15 15H18M15 25H12M15 25H18M25 15V25M25 15H22M25 15H28M25 25H22M25 25H28M15 20H25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- AHP text -->
+  <path d="M45 15H48.5L52 25L55.5 15H59L54 28H50L45 15Z" fill="#111827" />
+  <path d="M60 15H63.5V28H60V15Z" fill="#111827" />
+  <path d="M66 15H69.5V25H76V28H66V15Z" fill="#111827" />
+</svg>
