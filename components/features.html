@@ -1,0 +1,339 @@
+<!-- Features Section -->
+<section class="features" id="features">
+    <style>
+        .features {
+            background: #fff;
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: #0f172a;
+            clip-path: ellipse(50% 60% at 50% 0%);
+            z-index: 1;
+        }
+        
+
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .features-subtitle {
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .features-title {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .features-description {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--gray-dark);
+            font-size: 1.125rem;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            box-shadow: var(--shadow);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-icon svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .feature-icon.primary {
+            background: rgba(69, 162, 158, 0.1);
+            color: var(--primary);
+        }
+
+        .feature-icon.secondary {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--secondary);
+        }
+
+        .feature-icon.accent {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--violet);
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            color: var(--gray-dark);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            color: var(--gray-dark);
+        }
+
+        .feature-list li svg {
+            width: 18px;
+            height: 18px;
+            color: var(--primary);
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .feature-cta {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: auto;
+        }
+
+        .feature-cta svg {
+            width: 18px;
+            height: 18px;
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-cta:hover svg {
+            transform: translateX(5px);
+        }
+
+        .feature-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10B981;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            margin-bottom: 0.75rem;
+        }
+    </style>
+
+    <div class="container">
+        <div class="features-header">
+            <p class="features-subtitle slide-up">Why Choose AHP</p>
+            <h2 class="features-title slide-up delay-100">Unlock the Full Potential of Your Website in the AI Era</h2>
+            <p class="features-description slide-up delay-200">
+                The AI Handshake Protocol bridges the gap between your website and AI systems, ensuring proper recognition, attribution, and monetization opportunities.
+            </p>
+        </div>
+        
+        <div class="features-grid">
+            <!-- Feature 1 -->
+            <div class="feature-card slide-up delay-300">
+                <div class="feature-badge">Free</div>
+                <div class="feature-icon primary">
+                    <!-- Analytics Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Weekly Analytics</h3>
+                <p class="feature-description">
+                    Receive weekly reports on how AI systems interact with your content, with actionable recommendations to improve visibility and accuracy.
+                </p>
+                <ul class="feature-list">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>AI visibility score and metrics</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Content structure recommendations</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Delivered directly to your email</span>
+                    </li>
+                </ul>
+                <a href="#install" class="feature-cta">
+                    Get started for free
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="feature-card slide-up delay-400">
+                <div class="feature-badge">Free</div>
+                <div class="feature-icon secondary">
+                    <!-- Shield Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+                <h3 class="feature-title">AI Recognition</h3>
+                <p class="feature-description">
+                    AHP creates a standardized communication channel between your content and AI systems, ensuring proper recognition and attribution when your content is used.
+                </p>
+                <ul class="feature-list">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Enhanced presence in AI responses</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Structured metadata for AI systems</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Increased traffic from AI referrals</span>
+                    </li>
+                </ul>
+                <a href="#how-it-works" class="feature-cta">
+                    Learn how it works
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="feature-card slide-up delay-500">
+                <div class="feature-badge">Optional</div>
+                <div class="feature-icon accent">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Content Optimization</h3>
+                <p class="feature-description">
+                    After receiving your analytics reports, choose from our enhancement packages to optimize your digital presence and dramatically improve your AI visibility score.
+                </p>
+                <ul class="feature-list">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Content optimization packages</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>No long-term commitments</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Guaranteed visibility improvements</span>
+                    </li>
+                </ul>
+                <a href="#get-started" class="feature-cta">
+                    Explore premium features
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
