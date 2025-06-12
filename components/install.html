@@ -292,6 +292,34 @@
         .start-reports-btn:hover {
             background: #4f46e5;
         }
+        
+        .demo-badge {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            background: #ff5722;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        
+        .demo-notice {
+            margin-top: 0.75rem;
+            padding: 0.75rem;
+            background: rgba(255, 87, 34, 0.1);
+            border-left: 3px solid #ff5722;
+            font-size: 0.875rem;
+            color: #333;
+            border-radius: 0.25rem;
+        }
+        
+        .registration-box {
+            position: relative;
+        }
     </style>
 
 
@@ -358,9 +386,11 @@
             </div>
             
             <div class="registration-box">
+                <div class="demo-badge">DEMO ONLY</div>
                 <div class="registration-header">Complete Your AHP Registration</div>
                 <div class="registration-form">
                     <div class="form-description">Enter your details to start receiving free weekly AI visibility reports</div>
+                    <div class="demo-notice">This form is for demonstration purposes only. The actual sign-up will appear on YOUR website after installing the AHP code.</div>
                     <div class="form-field">
                         <label>Name</label>
                         <input type="text" placeholder="Your name" />
