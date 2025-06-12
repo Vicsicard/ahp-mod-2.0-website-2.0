@@ -4,374 +4,243 @@
         .hero {
             position: relative;
             min-height: 100vh;
-            background: #0f172a;
+            background: linear-gradient(180deg, #0f172a, #1e293b);
             overflow: hidden;
             color: white;
             display: flex;
             align-items: center;
+            justify-content: center;
             padding-top: 80px; /* Account for fixed navbar */
         }
-
+        
         .hero::before {
-            content: '';
+            content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 35%, rgba(69, 162, 158, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 75% 44%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 45% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
-            z-index: 1;
-        }
-
-        .hero-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                linear-gradient(to right, rgba(69, 162, 158, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(69, 162, 158, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 40%;
+            background: rgba(139, 92, 246, 0.08);
+            filter: blur(120px);
+            border-radius: 50%;
             z-index: 1;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 1200px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0;
             width: 100%;
+            text-align: center;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            background: rgba(69, 162, 158, 0.1);
-            border: 1px solid rgba(69, 162, 158, 0.3);
-            border-radius: 100px;
-            padding: 0.5rem 1rem;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
+            gap: 0.625rem;
+            padding: 0.6rem 1.25rem;
+            background: rgba(139, 92, 246, 0.15);
+            border-radius: 9999px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 12px -2px rgba(139, 92, 246, 0.15);
         }
 
         .hero-badge span {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
             border-radius: 50%;
-            background: var(--primary);
-            margin-right: 0.75rem;
-            animation: pulse 2s infinite;
+            box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
         }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(69, 162, 158, 0.7);
-            }
-            
-            70% {
-                transform: scale(1);
-                box-shadow: 0 0 0 10px rgba(69, 162, 158, 0);
-            }
-            
-            100% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(69, 162, 158, 0);
-            }
+        .hero-badge p {
+            font-size: 0.9375rem;
+            font-weight: 700;
+            margin: 0;
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.02em;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: white;
+            font-size: 4.75rem;
+            font-weight: 800;
+            line-height: 0.95;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.04em;
         }
 
         .hero-highlight {
-            position: relative;
-            display: inline-block;
-            background: linear-gradient(to right, #45A29E, #6366F1);
+            color: #8b5cf6;
+            background: linear-gradient(135deg, #8b5cf6, #c4b5fd);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 700;
-        }
-
-        .typewriter-container {
-            height: 60px;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .typewriter-text {
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 400;
-            border-right: 3px solid var(--primary);
-            padding-right: 5px;
-            animation: blink-caret 0.75s step-end infinite;
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--primary) }
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
         }
 
         .hero-description {
             font-size: 1.25rem;
-            max-width: 600px;
-            margin-bottom: 2.5rem;
-            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+            margin-bottom: 3.25rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
             font-weight: 400;
-            line-height: 1.7;
-        }
-
-        .hero-free-badge {
-            display: inline-block;
-            background: linear-gradient(to right, rgba(69, 162, 158, 0.2), rgba(99, 102, 241, 0.2));
-            border: 1px solid rgba(69, 162, 158, 0.3);
-            border-radius: var(--border-radius);
-            padding: 0.5rem 1rem;
-            margin-bottom: 2rem;
-            color: white;
-            font-weight: 600;
+            letter-spacing: 0.01em;
         }
 
         .hero-cta-group {
             display: flex;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
+            gap: 1.75rem;
+            margin-bottom: 5.5rem;
+            justify-content: center;
         }
 
         .hero-btn-primary {
             display: inline-flex;
             align-items: center;
-            padding: 0.75rem 1.5rem;
-            background: var(--gradient-primary);
+            padding: 1.25rem 2.75rem;
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
             color: white;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            transition: all 0.3s ease;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.2s ease;
             border: none;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(69, 162, 158, 0.2), 0 2px 4px -1px rgba(69, 162, 158, 0.06);
+            text-decoration: none;
+            box-shadow: 0 6px 12px -2px rgba(139, 92, 246, 0.25), 0 3px 7px -3px rgba(139, 92, 246, 0.1);
+            letter-spacing: 0.02em;
         }
 
         .hero-btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(69, 162, 158, 0.3), 0 4px 6px -2px rgba(69, 162, 158, 0.05);
+            background: linear-gradient(135deg, #7c3aed, #9061f9);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -4px rgba(139, 92, 246, 0.4), 0 8px 12px -3px rgba(139, 92, 246, 0.2);
         }
 
         .hero-btn-secondary {
             display: inline-flex;
             align-items: center;
-            padding: 0.75rem 1.5rem;
-            background: transparent;
+            padding: 1.25rem 2.75rem;
+            background: rgba(255, 255, 255, 0.08);
             color: white;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
             cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 0.02em;
         }
 
         .hero-btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.2), 0 8px 12px -3px rgba(0, 0, 0, 0.15);
+            border-color: rgba(255, 255, 255, 0.25);
         }
-
+        
         .hero-stats {
             display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-stat {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .hero-stat-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(69, 162, 158, 0.1);
-            display: flex;
-            align-items: center;
             justify-content: center;
-            color: var(--primary);
+            gap: 9rem;
         }
-
-        .hero-stat-icon svg {
-            width: 20px;
-            height: 20px;
+        
+        .hero-stat {
+            text-align: center;
         }
-
+        
         .hero-stat-content h4 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0;
-            color: white;
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0 0 0.375rem 0;
+            background: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0.85));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
         }
-
+        
         .hero-stat-content p {
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.75);
             margin: 0;
-        }
-
-        .ml-2 {
-            margin-left: 0.5rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
         }
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
 
             .hero-cta-group {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.25rem;
             }
 
             .hero-stats {
                 flex-direction: column;
-                gap: 1.5rem;
+                gap: 2rem;
+            }
+            
+            .hero-content {
+                padding: 0 1.5rem;
             }
         }
     </style>
-
-    <div class="hero-grid"></div>
     
-
-    
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span></span>
-                <p>Copyright Protected Technology</p>
-            </div>
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span></span>
+            <p>Patent-Pending Technology</p>
+        </div>
+        
+        <h1>
+            Make Your<br>Website<br>
+            <span class="hero-highlight">Visible to AI</span><br>
+            Systems
+        </h1>
+        
+        <p class="hero-description">
+            The AI Handshake Protocol creates a direct communication channel between your website and AI systems like ChatGPT, Claude, and Gemini. Get discovered, properly indexed, and fairly compensated.
+        </p>
+        
+        <div class="hero-cta-group">
+            <a href="#install" class="hero-btn-primary" id="install-btn">
+                Get Started Free
+            </a>
             
-            <h1>
-                Make Your Website <span class="hero-highlight">Visible to AI</span> Systems
-            </h1>
-            
-            <div class="typewriter-container">
-                <div id="typewriter" class="typewriter-text"></div>
-            </div>
-            
-            <p class="hero-description">
-                The AI Handshake Protocol creates a direct communication channel between your website and AI systems like ChatGPT, Claude, and Google Bard. Get discovered, properly indexed, and fairly compensated.
-            </p>
-
-
-            
-            <div class="hero-cta-group">
-                <a href="#install" class="hero-btn-primary" id="install-btn">
-                    Install AHP Now
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14"></path>
-                        <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                </a>
-                
-                <button class="hero-btn-secondary" id="demo-btn">
-                    See Live Demo
-                </button>
-            </div>
-            
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="hero-stat-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                        </svg>
-                    </div>
-                    <div class="hero-stat-content">
-                        <h4>5,000+</h4>
-                        <p>Websites Using AHP</p>
-                    </div>
+            <a href="#demo" class="hero-btn-secondary" id="demo-btn">
+                See How It Works
+            </a>
+        </div>
+        
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="hero-stat-content">
+                    <h4>15,000+</h4>
+                    <p>Websites Using AHP</p>
                 </div>
-                
-                <div class="hero-stat">
-                    <div class="hero-stat-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-                            <polyline points="16 7 22 7 22 13"></polyline>
-                        </svg>
-                    </div>
-                    <div class="hero-stat-content">
-                        <h4>+163%</h4>
-                        <p>Average Traffic Increase</p>
-                    </div>
+            </div>
+            
+            <div class="hero-stat">
+                <div class="hero-stat-content">
+                    <h4>+215%</h4>
+                    <p>Average Traffic Increase</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Typewriter effect
-        const typewriterElement = document.getElementById('typewriter');
-        const typewriterTexts = [
-            'Information Flows like Water.',
-            'Some hold a cup. Others Sail the Ocean.'
-        ];
-        
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typingDelay = 100;
-        
-        function typeWriter() {
-            const currentText = typewriterTexts[textIndex];
-            
-            if (isDeleting) {
-                typewriterElement.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-                typingDelay = 50;
-            } else {
-                typewriterElement.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-                typingDelay = 100;
-            }
-            
-            if (!isDeleting && charIndex === currentText.length) {
-                isDeleting = false;
-                typingDelay = 2000; // Pause at the end of typing
-                setTimeout(function() {
-                    if (textIndex < typewriterTexts.length - 1) {
-                        isDeleting = true;
-                    } else {
-                        // Reset to first text after showing all texts
-                        textIndex = -1;
-                        isDeleting = true;
-                    }
-                }, typingDelay);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex++;
-                if (textIndex === typewriterTexts.length) {
-                    textIndex = 0;
-                }
-                typingDelay = 500; // Pause before typing next text
-            }
-            
-            setTimeout(typeWriter, typingDelay);
-        }
-        
-        setTimeout(typeWriter, 1000); // Start after a delay
-    });
-</script>
+

@@ -2,9 +2,9 @@
 <footer class="footer" id="footer">
     <style>
         .footer {
-            background-color: var(--dark);
+            background-color: #111827;
             color: white;
-            padding: 5rem 0 2rem;
+            padding: 7rem 0 3rem;
             position: relative;
             overflow: hidden;
         }
@@ -12,38 +12,39 @@
         .footer-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
+            gap: 2.5rem;
+            margin-bottom: 3.5rem;
         }
 
         @media (min-width: 768px) {
             .footer-grid {
                 grid-template-columns: 2fr 1fr 1fr 1fr;
+                gap: 2rem;
             }
         }
 
         .footer-logo {
             display: flex;
             align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-logo img {
-            height: 40px;
-            margin-right: 0.75rem;
+            margin-bottom: 1.25rem;
         }
 
         .footer-logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.75rem;
+            font-weight: 800;
             color: white;
+            background: linear-gradient(90deg, #8b5cf6, #9f7aea);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .footer-about {
-            color: var(--gray-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+            line-height: 1.8;
             max-width: 350px;
+            font-size: 1rem;
         }
 
         .footer-social {
@@ -59,25 +60,27 @@
             height: 40px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .footer-social a:hover {
-            background: var(--primary);
+            background: #8b5cf6;
             transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
         }
 
         .footer-social svg {
             width: 20px;
             height: 20px;
-            color: white;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .footer-heading {
             font-size: 1.25rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 1.5rem;
             color: white;
+            letter-spacing: -0.01em;
         }
 
         .footer-links {
@@ -87,25 +90,26 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
 
         .footer-links a {
-            color: var(--gray-light);
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             display: inline-block;
+            font-size: 1rem;
         }
 
         .footer-links a:hover {
-            color: white;
-            transform: translateX(5px);
+            color: #8b5cf6;
+            transform: translateX(4px);
         }
 
         .footer-divider {
             height: 1px;
             background: rgba(255, 255, 255, 0.1);
-            margin: 2rem 0;
+            margin: 3rem 0;
         }
 
         .footer-bottom {
@@ -124,8 +128,8 @@
         }
 
         .footer-copyright {
-            color: var(--gray-light);
-            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9375rem;
             margin-bottom: 1rem;
         }
 
@@ -141,14 +145,14 @@
         }
 
         .footer-legal a {
-            color: var(--gray-light);
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
-            font-size: 0.875rem;
-            transition: all 0.3s ease;
+            font-size: 0.9375rem;
+            transition: all 0.2s ease;
         }
 
         .footer-legal a:hover {
-            color: white;
+            color: #8b5cf6;
         }
     </style>
 
@@ -156,7 +160,6 @@
         <div class="footer-grid">
             <div class="footer-column">
                 <div class="footer-logo">
-                    <img src="images/ahp-logo-white.svg" alt="AI Handshake Protocol Logo">
                     <span class="footer-logo-text">AHP</span>
                 </div>
                 <p class="footer-about">
@@ -188,7 +191,7 @@
                 <ul class="footer-links">
                     <li><a href="#features">Features</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#install">Installation</a></li>
                     <li><a href="#faq">FAQ</a></li>
                 </ul>
             </div>
@@ -206,7 +209,7 @@
             <div class="footer-column">
                 <h3 class="footer-heading">Contact</h3>
                 <ul class="footer-links">
-                    <li><a href="mailto:support@aihandshake.org">support@aihandshake.org</a></li>
+                    <li><a href="mailto:hello@aihandshake.org">hello@aihandshake.org</a></li>
                     <li><a href="https://twitter.com/aihandshake" target="_blank">Twitter</a></li>
                     <li><a href="https://discord.gg/aihandshake" target="_blank">Discord Community</a></li>
                 </ul>
@@ -217,12 +220,12 @@
         
         <div class="footer-bottom">
             <div class="footer-copyright">
-                &copy; 2023 AI Handshake Protocol. All rights reserved.
+                &copy; 2025 AI Handshake Protocol. All rights reserved.
             </div>
             <div class="footer-legal">
-                <a href="#" target="_blank">Terms of Service</a>
-                <a href="#" target="_blank">Privacy Policy</a>
-                <a href="#" target="_blank">Cookie Policy</a>
+                <a href="#" target="_blank">Terms</a>
+                <a href="#" target="_blank">Privacy</a>
+                <a href="#" target="_blank">Cookies</a>
             </div>
         </div>
     </div>

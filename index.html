@@ -294,64 +294,15 @@
 </head>
 <body>
     <div id="app">
-        <!-- Navbar -->
-        <nav class="navbar">
-            <div class="container navbar-container">
-                <a href="#" class="navbar-logo">
-                    <img src="images/ahp-logo.svg" alt="AI Handshake Protocol Logo">
-                    <span class="navbar-logo-text">AHP</span>
-                </a>
-                
-                <div class="navbar-menu">
-                    <ul class="navbar-links">
-                        <li><a href="#features" class="navbar-link">Features</a></li>
-                        <li><a href="#how-it-works" class="navbar-link">How It Works</a></li>
-                        <li><a href="#install" class="navbar-link">Install</a></li>
-                        <li><a href="#testimonials" class="navbar-link">Testimonials</a></li>
-                        <li><a href="#faq" class="navbar-link">FAQ</a></li>
-                    </ul>
-                    
-                    <a href="#install" class="navbar-cta">Install Now</a>
-                    
-                    <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle menu">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="3" y1="12" x2="21" y2="12"></line>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <line x1="3" y1="18" x2="21" y2="18"></line>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </nav>
-        
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobile-menu">
-            <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-            
-            <ul class="mobile-menu-links">
-                <li class="mobile-menu-link"><a href="#features">Features</a></li>
-                <li class="mobile-menu-link"><a href="#how-it-works">How It Works</a></li>
-                <li class="mobile-menu-link"><a href="#install">Install</a></li>
-                <li class="mobile-menu-link"><a href="#testimonials">Testimonials</a></li>
-                <li class="mobile-menu-link"><a href="#faq">FAQ</a></li>
-            </ul>
-            
-            <a href="#install" class="mobile-menu-cta">Install Now</a>
-        </div>
-        
-        <div class="overlay" id="overlay"></div>
         
         <!-- Component placeholders -->
+        <div id="navbar-section"></div>
         <div id="hero-section"></div>
         <div id="features-section"></div>
         <div id="how-it-works-section"></div>
         <div id="install-section"></div>
         <div id="testimonials-section"></div>
+        <div id="next-section"></div>
         <div id="faq-section"></div>
         <div id="footer-section"></div>
     </div>
@@ -374,70 +325,45 @@
             }
             
             // Load all components
+            loadComponent('components/navbar.html', 'navbar-section');
             loadComponent('components/hero.html', 'hero-section');
             loadComponent('components/features.html', 'features-section');
             loadComponent('components/how-it-works.html', 'how-it-works-section');
             loadComponent('components/install.html', 'install-section');
             loadComponent('components/testimonials.html', 'testimonials-section');
+            loadComponent('components/next.html', 'next-section');
             loadComponent('components/faq.html', 'faq-section');
             loadComponent('components/footer.html', 'footer-section');
             
-            // Navbar scroll effect
-            const navbar = document.querySelector('.navbar');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
+            // Smooth scrolling setup will be initialized after components are loaded
+            let navbar;
+            setTimeout(() => {
+                navbar = document.querySelector('.navbar');
+                initSmoothScrolling();
+            }, 300);
             
-            // Mobile menu toggle
-            const navbarToggle = document.getElementById('navbar-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileMenuClose = document.getElementById('mobile-menu-close');
-            const overlay = document.getElementById('overlay');
-            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link a');
-            
-            navbarToggle.addEventListener('click', () => {
-                mobileMenu.classList.add('active');
-                overlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-            
-            function closeMobileMenu() {
-                mobileMenu.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-            
-            mobileMenuClose.addEventListener('click', closeMobileMenu);
-            overlay.addEventListener('click', closeMobileMenu);
-            
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', closeMobileMenu);
-            });
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const navbarHeight = navbar.offsetHeight;
-                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            // Function to initialize smooth scrolling
+            function initSmoothScrolling() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
                         
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            const navbarHeight = navbar.offsetHeight;
+                            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                            
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
                 });
-            });
+            }
         });
     </script>
 </body>

@@ -1,0 +1,190 @@
+<!-- Next Section -->
+<section class="next" id="next">
+    <style>
+        .next {
+            background-color: #111827;
+            color: white;
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Radial gradients for background */
+        .next::before {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            top: -30%;
+            right: -20%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(17, 24, 39, 0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .next::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            bottom: -20%;
+            left: -20%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(17, 24, 39, 0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .next-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .next-badge {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 1.25rem;
+            background-color: rgba(139, 92, 246, 0.15);
+            border-radius: 9999px;
+            padding: 0.5rem 0.75rem;
+        }
+        
+        .next-badge-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #8b5cf6;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        
+        .next-badge-text {
+            color: #8b5cf6;
+            font-weight: 500;
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        .next-title {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            max-width: 800px;
+        }
+
+        .next-description {
+            max-width: 650px;
+            margin: 0 auto 3rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.125rem;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .next-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .next-btn-primary {
+            background: #8b5cf6;
+            color: white;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.2), 0 2px 4px -1px rgba(139, 92, 246, 0.1);
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .next-btn-primary:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.25), 0 4px 6px -2px rgba(139, 92, 246, 0.1);
+        }
+
+        .next-btn-primary svg {
+            width: 20px;
+            height: 20px;
+            margin-left: 0.625rem;
+            transition: transform 0.2s ease;
+        }
+        
+        .next-btn-primary:hover svg {
+            transform: translateX(3px);
+        }
+
+        .next-btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .next-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .next-btn-secondary svg {
+            width: 20px;
+            height: 20px;
+            margin-left: 0.625rem;
+            transition: transform 0.2s ease;
+        }
+        
+        .next-btn-secondary:hover svg {
+            transform: translateX(3px);
+        }
+    </style>
+
+    <div class="container">
+        <div class="next-container">
+            <div class="next-badge">
+                <span class="next-badge-dot"></span>
+                <span class="next-badge-text">What's Next</span>
+            </div>
+            <h2 class="next-title">Ready to Enhance Your Website's AI Visibility?</h2>
+            <p class="next-description">
+                Join thousands of websites already using the AI Handshake Protocol to improve their visibility and ensure proper attribution in AI systems.
+            </p>
+            <div class="next-cta">
+                <a href="#install" class="next-btn-primary">
+                    Install AHP Now
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+                <a href="#" target="_blank" class="next-btn-secondary">
+                    View Documentation
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -2,7 +2,7 @@
 <section class="how-it-works" id="how-it-works">
     <style>
         .how-it-works {
-            background: #0f172a;
+            background: #1a1f36;
             color: white;
             padding: 8rem 0;
             position: relative;
@@ -17,13 +17,11 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 35%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 75% 44%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 45% 80%, rgba(245, 158, 11, 0.15) 0%, transparent 50%);
+                radial-gradient(circle at 20% 35%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 44%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 45% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
             z-index: 1;
         }
-        
-
 
         .how-it-works-header {
             text-align: center;
@@ -32,29 +30,47 @@
             z-index: 2;
         }
 
-        .how-it-works-subtitle {
-            color: var(--primary-light);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 1rem;
+        .how-it-works-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 9999px;
+            margin-bottom: 1.25rem;
+        }
+
+        .how-it-works-badge span {
+            width: 8px;
+            height: 8px;
+            background: #8b5cf6;
+            border-radius: 50%;
+        }
+
+        .how-it-works-badge p {
             font-size: 0.875rem;
+            font-weight: 500;
+            margin: 0;
+            opacity: 0.9;
         }
 
         .how-it-works-title {
-            font-size: 2.5rem;
+            font-size: 2.75rem;
+            font-weight: 800;
             color: white;
             margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
         }
 
         .how-it-works-description {
-            max-width: 700px;
+            max-width: 650px;
             margin: 0 auto;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 1.125rem;
-            font-weight: 400;
             line-height: 1.7;
-            margin-bottom: 1.5rem;
+            margin-bottom: 3rem;
+            font-weight: 400;
         }
 
         .process-container {
@@ -62,86 +78,86 @@
             z-index: 2;
         }
 
-        .process-steps {
+        .how-it-works-steps {
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
         }
 
         @media (min-width: 768px) {
-            .process-steps {
+            .how-it-works-steps {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (min-width: 1024px) {
-            .process-steps {
+            .how-it-works-steps {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
 
-        .process-step {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: var(--border-radius-lg);
-            padding: 2rem;
-            transition: all 0.3s ease;
+        .how-it-works-step {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1rem;
+            padding: 2.25rem;
+            transition: all 0.2s ease;
             height: 100%;
-            backdrop-filter: blur(10px);
         }
 
-        .process-step:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            background: rgba(255, 255, 255, 0.1);
+        .how-it-works-step:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.06);
         }
 
-        .process-step-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            background: var(--gradient-primary);
+        .how-it-works-step-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 0.75rem;
+            background: rgba(139, 92, 246, 0.08);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
             position: relative;
-            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
         }
 
-        .process-step-icon svg {
-            width: 32px;
-            height: 32px;
-            color: white;
-        }
-
-        .process-step-number {
-            position: absolute;
-            top: -10px;
-            right: -10px;
+        .how-it-works-step-icon svg {
             width: 24px;
             height: 24px;
-            background: white;
+            color: #8b5cf6;
+        }
+
+        .how-it-works-step-number {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 22px;
+            height: 22px;
+            background: #8b5cf6;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 0.875rem;
-        }
-
-        .step-title {
-            font-size: 1.3rem;
-            font-weight: 600;
             color: white;
-            margin: 1.5rem 0 0.75rem;
+            font-weight: 700;
+            font-size: 0.75rem;
         }
 
-        .step-description {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1rem;
+        .how-it-works-step-content h3 {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: white;
+            margin: 0 0 0.875rem 0;
+            letter-spacing: -0.01em;
+        }
+
+        .how-it-works-step-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
             line-height: 1.7;
+            margin: 0;
             font-weight: 400;
         }
 
@@ -153,32 +169,12 @@
             .process-connection {
                 display: block;
                 position: absolute;
-                top: 32px;
+                top: 24px;
                 left: 25%;
                 width: 50%;
-                height: 2px;
-                background: linear-gradient(to right, var(--primary), var(--accent));
+                height: 1px;
+                background: rgba(255, 255, 255, 0.2);
                 z-index: 1;
-            }
-
-            .process-connection::before,
-            .process-connection::after {
-                content: '';
-                position: absolute;
-                top: -4px;
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                background: var(--primary);
-            }
-
-            .process-connection::before {
-                left: 0;
-            }
-
-            .process-connection::after {
-                right: 0;
-                background: var(--accent);
             }
         }
 
@@ -201,78 +197,77 @@
         }
 
         .how-it-works-step {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: var(--border-radius-lg);
-            padding: 2rem;
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1rem;
+            padding: 2.25rem;
+            transition: all 0.2s ease;
             height: 100%;
-            backdrop-filter: blur(10px);
         }
 
         .how-it-works-step:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.06);
         }
 
         .how-it-works-step-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            background: var(--gradient-primary);
+            width: 52px;
+            height: 52px;
+            border-radius: 0.75rem;
+            background: rgba(139, 92, 246, 0.08);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
             position: relative;
-            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
         }
 
         .how-it-works-step-icon svg {
-            width: 32px;
-            height: 32px;
-            color: white;
+            width: 24px;
+            height: 24px;
+            color: #8b5cf6;
         }
 
         .how-it-works-step-number {
             position: absolute;
-            top: -10px;
-            right: -10px;
-            width: 24px;
-            height: 24px;
-            background: white;
+            top: -8px;
+            right: -8px;
+            width: 22px;
+            height: 22px;
+            background: #8b5cf6;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary);
+            color: white;
             font-weight: 700;
-            font-size: 0.875rem;
-        }
-
-        .how-it-works-step-content {
-            margin-left: 1rem;
+            font-size: 0.75rem;
         }
 
         .how-it-works-step-content h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
+            font-size: 1.375rem;
+            font-weight: 700;
             color: white;
-            margin: 1.5rem 0 0.75rem;
+            margin: 0 0 0.875rem 0;
+            letter-spacing: -0.01em;
         }
 
         .how-it-works-step-content p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
             line-height: 1.7;
+            margin: 0;
             font-weight: 400;
         }
     </style>
 
     <div class="container">
         <div class="how-it-works-header">
-            <p class="how-it-works-subtitle">The Process</p>
+            <div class="how-it-works-badge">
+                <span></span>
+                <p>How it works</p>
+            </div>
             <h2 class="how-it-works-title">Your Journey to AI Visibility</h2>
             <p class="how-it-works-description">
                 The AI Handshake Protocol creates a seamless connection between your website and AI systems, ensuring proper recognition, attribution, and monetization.
@@ -282,14 +277,12 @@
         <div class="process-container">
             <div class="process-connection"></div>
             <div class="how-it-works-steps">
-                <div class="how-it-works-step slide-up delay-300">
+                <div class="how-it-works-step">
                     <div class="how-it-works-step-icon">
                         <div class="how-it-works-step-number">1</div>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
                         </svg>
                     </div>
                     <div class="how-it-works-step-content">
@@ -298,47 +291,54 @@
                     </div>
                 </div>
                 
-                <div class="how-it-works-step slide-up delay-400">
+                <div class="how-it-works-step">
                     <div class="how-it-works-step-icon">
                         <div class="how-it-works-step-number">2</div>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                            <line x1="6" y1="18" x2="6.01" y2="18"></line>
                         </svg>
                     </div>
                     <div class="how-it-works-step-content">
-                        <h3>Analyze</h3>
-                        <p>Receive your first AI visibility report within 24 hours.</p>
+                        <h3>Configure</h3>
+                        <p>Set up your preferences and customize how AI interacts with your content.</p>
                     </div>
                 </div>
                 
-                <div class="how-it-works-step slide-up delay-500">
+                <div class="how-it-works-step">
                     <div class="how-it-works-step-icon">
                         <div class="how-it-works-step-number">3</div>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M12 16v-4"></path>
-                            <path d="M12 8h.01"></path>
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
                         </svg>
                     </div>
                     <div class="how-it-works-step-content">
-                        <h3>Learn</h3>
-                        <p>Understand how AI systems see and interact with your content.</p>
-                <!-- Step 4 -->
-                <div class="process-step slide-up delay-600">
-                    <div class="process-step-icon">
-                        <div class="process-step-number">4</div>
-                        <!-- Sri Yantra Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="12 2 3 10 3 18 12 22 21 18 21 10"></polygon>
-                            <line x1="12" y1="2" x2="12" y2="22"></line>
-                            <line x1="3" y1="14" x2="21" y2="14"></line>
+                        <h3>Verify</h3>
+                        <p>Confirm your site is properly recognized by AI systems worldwide.</p>
+                    </div>
+                </div>
+                
+                <div class="how-it-works-step">
+                    <div class="how-it-works-step-icon">
+                        <div class="how-it-works-step-number">4</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v4"></path>
+                            <path d="M12 18v4"></path>
+                            <path d="M4.93 4.93l2.83 2.83"></path>
+                            <path d="M16.24 16.24l2.83 2.83"></path>
+                            <path d="M2 12h4"></path>
+                            <path d="M18 12h4"></path>
+                            <path d="M4.93 19.07l2.83-2.83"></path>
+                            <path d="M16.24 7.76l2.83-2.83"></path>
                         </svg>
                     </div>
-                    <h3 class="step-title">Transcend Digital Limitations</h3>
-                    <p class="step-description">
-                        Follow the sacred wisdom in your reports to elevate your AI resonance. Choose optional alchemical enhancements or implement the sacred patterns yourself.
-                    </p>
+                    <div class="how-it-works-step-content">
+                        <h3>Monitor</h3>
+                        <p>Track AI interactions and optimize your content for better visibility.</p>
+                    </div>
                 </div>
             </div>
         </div>
