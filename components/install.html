@@ -580,11 +580,208 @@
         }
         
         .report-footer {
-            padding: 1rem 1.5rem;
+            padding: 1rem;
             background: #f1f5f9;
-            font-size: 0.875rem;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.75rem;
             color: #64748b;
             text-align: center;
+        }
+        
+        /* Close button styles */
+        .close-report-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #e2e8f0;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .close-report-btn:hover {
+            background: #f1f5f9;
+            transform: scale(1.1);
+        }
+        
+        .close-report-btn svg {
+            width: 16px;
+            height: 16px;
+            color: #64748b;
+        }
+        
+        /* Tab interface styles */
+        .tabs-container {
+            margin-bottom: 1.5rem;
+        }
+        
+        .tabs-nav {
+            display: flex;
+            border-bottom: 2px solid #e2e8f0;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            color: #64748b;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        .tab-btn:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .tab-btn.active {
+            color: #8b5cf6;
+        }
+        
+        .tab-btn.active:after {
+            background: #8b5cf6;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Connection test styles */
+        .connection-test-result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            display: none;
+        }
+        
+        .test-success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        .test-failure {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        .test-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .test-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .test-icon.success {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+        
+        .test-icon.failure {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        
+        .test-title {
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+        
+        .test-title.success {
+            color: #10b981;
+        }
+        
+        .test-title.failure {
+            color: #ef4444;
+        }
+        
+        .test-message {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .troubleshooting-section {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        .troubleshooting-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .troubleshooting-content {
+            display: none;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 0.375rem;
+        }
+        
+        .troubleshooting-content.active {
+            display: block;
+        }
+        
+        .troubleshooting-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .troubleshooting-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+        }
+        
+        .troubleshooting-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .troubleshooting-item-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #334155;
+        }
+        
+        .troubleshooting-item-content {
+            font-size: 0.9375rem;
+            color: #475569;
         }
     </style>
 
@@ -671,17 +868,105 @@
             
             <div class="sample-report-box">
                 <div class="demo-badge">PREVIEW</div>
-                <div class="sample-report-header">See What Your Weekly Report Will Look Like</div>
-                <div class="sample-report-form">
-                    <div class="form-description">Enter your website URL to generate a sample AI visibility report</div>
-                    <div class="form-field url-input-field">
-                        <label>Website URL</label>
-                        <input type="url" id="website-url" placeholder="https://yourwebsite.com" />
+                <div class="sample-report-header">Test & Preview AHP Mod 2.0</div>
+                
+                <div class="tabs-container">
+                    <div class="tabs-nav">
+                        <button class="tab-btn active" data-tab="sample-report">Sample Report</button>
+                        <button class="tab-btn" data-tab="connection-test">Connection Test</button>
                     </div>
-                    <button class="generate-report-btn" id="generate-report-btn">Generate Sample Report</button>
+                    
+                    <div class="tab-content active" id="sample-report-tab">
+                        <div class="form-description">Enter your website URL to generate a sample AI visibility report</div>
+                        <div class="form-field url-input-field">
+                            <label>Website URL</label>
+                            <input type="url" id="website-url" placeholder="https://yourwebsite.com" />
+                        </div>
+                        <button class="generate-report-btn" id="generate-report-btn">Generate Sample Report</button>
+                    </div>
+                    
+                    <div class="tab-content" id="connection-test-tab">
+                        <div class="form-description">Verify if your website has properly implemented the AHP Mod 2.0 protocol</div>
+                        <div class="form-field url-input-field">
+                            <label>Website URL</label>
+                            <input type="url" id="connection-test-url" placeholder="https://yourwebsite.com" />
+                        </div>
+                        <button class="generate-report-btn" id="verify-connection-btn">Verify Connection</button>
+                        
+                        <div class="connection-test-result test-success" id="test-success-result">
+                            <div class="test-header">
+                                <div class="test-icon success">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 6L9 17l-5-5"></path>
+                                    </svg>
+                                </div>
+                                <div class="test-title success">Connection Successful!</div>
+                            </div>
+                            <div class="test-message">
+                                We've detected that <span id="success-domain">yourwebsite.com</span> has correctly implemented the AHP Mod 2.0 protocol. Your website is now properly communicating with AI systems.
+                            </div>
+                            <button class="generate-report-btn" id="view-sample-report-btn" style="background: #10b981;">View Sample Report</button>
+                        </div>
+                        
+                        <div class="connection-test-result test-failure" id="test-failure-result">
+                            <div class="test-header">
+                                <div class="test-icon failure">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </div>
+                                <div class="test-title failure">Connection Failed</div>
+                            </div>
+                            <div class="test-message">
+                                We couldn't detect the AHP Mod 2.0 protocol on <span id="failure-domain">yourwebsite.com</span>. This means AI systems may have difficulty properly understanding your content.
+                            </div>
+                            
+                            <div class="troubleshooting-section">
+                                <div class="troubleshooting-title" id="troubleshooting-toggle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                    </svg>
+                                    Why did verification fail?
+                                </div>
+                                <div class="troubleshooting-content" id="troubleshooting-content">
+                                    <ul class="troubleshooting-list">
+                                        <li class="troubleshooting-item">
+                                            <div class="troubleshooting-item-title">Script Not Found</div>
+                                            <div class="troubleshooting-item-content">
+                                                The AHP Mod 2.0 script may not be installed on your website. Make sure you've added the script to all pages of your site by following the installation instructions above.
+                                            </div>
+                                        </li>
+                                        <li class="troubleshooting-item">
+                                            <div class="troubleshooting-item-title">Incorrect Implementation</div>
+                                            <div class="troubleshooting-item-content">
+                                                The script may be present but implemented incorrectly. Ensure you've copied the exact code snippet provided in the installation instructions.
+                                            </div>
+                                        </li>
+                                        <li class="troubleshooting-item">
+                                            <div class="troubleshooting-item-title">Caching Issues</div>
+                                            <div class="troubleshooting-item-content">
+                                                If you recently added the script, your website might be serving cached versions of your pages. Try clearing your cache or using a private/incognito browser window.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <button class="generate-report-btn" id="try-again-btn" style="background: #ef4444; margin-top: 1.5rem;">Try Again</button>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="sample-report-preview" id="sample-report-preview" style="display: none;">
+                    <button class="close-report-btn" id="close-report-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
                     <div class="loading-indicator" id="loading-indicator">
                         <div class="spinner"></div>
                         <p>Analyzing website and generating report...</p>

@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Handshake Protocol - Free AI Visibility Reports</title>
     <meta name="description" content="Get free weekly AI visibility reports for your website. No credit card required. Improve how AI systems see and understand your content with the AI Handshake Protocol.">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Make Your Website Visible to AI Systems - AHP MOD 2.0">
+    <meta property="og:description" content="Get free weekly AI visibility reports for your website. Improve how AI systems see and understand your content with the AI Handshake Protocol.">
+    <meta property="og:image" content="https://yourwebsite.com/images/social/og-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Make Your Website Visible to AI Systems - AHP MOD 2.0">
+    <meta name="twitter:description" content="Get free weekly AI visibility reports for your website. Improve how AI systems see and understand your content.">
+    <meta name="twitter:image" content="https://yourwebsite.com/images/social/og-image.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -343,9 +356,31 @@
                 initSampleReportFeature(); // Initialize the sample report feature
             }, 500); // Increased timeout to ensure all components are fully loaded
             
-            // Function to initialize the sample report feature
+            // Function to initialize the sample report feature and connection test
             function initSampleReportFeature() {
-                console.log('Initializing sample report feature');
+                console.log('Initializing sample report and connection test features');
+                
+                // Tab interface functionality
+                const tabButtons = document.querySelectorAll('.tab-btn');
+                const tabContents = document.querySelectorAll('.tab-content');
+                
+                if (tabButtons && tabButtons.length) {
+                    tabButtons.forEach(button => {
+                        button.addEventListener('click', function() {
+                            const tabId = this.getAttribute('data-tab');
+                            
+                            // Remove active class from all buttons and contents
+                            tabButtons.forEach(btn => btn.classList.remove('active'));
+                            tabContents.forEach(content => content.classList.remove('active'));
+                            
+                            // Add active class to current button and content
+                            this.classList.add('active');
+                            document.getElementById(tabId + '-tab').classList.add('active');
+                        });
+                    });
+                }
+                
+                // Sample Report functionality
                 const generateReportBtn = document.getElementById('generate-report-btn');
                 const websiteUrlInput = document.getElementById('website-url');
                 const sampleReportPreview = document.getElementById('sample-report-preview');
@@ -355,88 +390,190 @@
                 const reportDomainRec = document.getElementById('report-domain-rec');
                 const reportScore = document.getElementById('report-score');
                 const recommendationsList = document.getElementById('recommendations-list');
+                const closeReportBtn = document.getElementById('close-report-btn');
                 
-                if (!generateReportBtn) {
-                    console.log('Generate report button not found');
-                    return;
+                // Close button functionality
+                if (closeReportBtn) {
+                    closeReportBtn.addEventListener('click', function() {
+                        sampleReportPreview.style.display = 'none';
+                    });
                 }
                 
-                console.log('Adding event listener to generate report button');
-                generateReportBtn.addEventListener('click', function() {
-                    // Get the URL input
-                    let url = websiteUrlInput.value.trim();
-                    console.log('Generate report clicked with URL:', url);
-                    
-                    // Basic URL validation
-                    if (!url) {
-                        alert('Please enter a valid website URL');
-                        return;
-                    }
-                    
-                    // Add http:// if not present
-                    if (!url.startsWith('http://') && !url.startsWith('https://')) {
-                        url = 'https://' + url;
-                        websiteUrlInput.value = url;
-                    }
-                    
-                    try {
-                        // Extract domain name for display
-                        const urlObj = new URL(url);
-                        const domain = urlObj.hostname.replace('www.', '');
+                if (generateReportBtn) {
+                    console.log('Adding event listener to generate report button');
+                    generateReportBtn.addEventListener('click', function() {
+                        // Get the URL input
+                        let url = websiteUrlInput.value.trim();
+                        console.log('Generate report clicked with URL:', url);
                         
-                        // Show the report preview section
-                        sampleReportPreview.style.display = 'block';
-                        loadingIndicator.style.display = 'flex';
-                        reportContent.style.display = 'none';
+                        // Basic URL validation
+                        if (!url) {
+                            alert('Please enter a valid website URL');
+                            return;
+                        }
                         
-                        // Scroll to the report preview
-                        sampleReportPreview.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Add http:// if not present
+                        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                            url = 'https://' + url;
+                            websiteUrlInput.value = url;
+                        }
                         
-                        // Simulate loading time (1.5 seconds)
-                        setTimeout(function() {
-                            // Update report with domain info
-                            reportDomain.textContent = domain;
-                            reportDomainRec.textContent = domain;
+                        try {
+                            // Extract domain name for display
+                            const urlObj = new URL(url);
+                            const domain = urlObj.hostname.replace('www.', '');
                             
-                            // Generate a semi-random score between 55-85
-                            const baseScore = 55;
-                            const randomAddition = Math.floor(Math.random() * 30);
-                            const score = baseScore + randomAddition;
-                            reportScore.innerHTML = score + '<span>/100</span>';
+                            // Show the report preview section
+                            sampleReportPreview.style.display = 'block';
+                            loadingIndicator.style.display = 'flex';
+                            reportContent.style.display = 'none';
                             
-                            // Generate semi-personalized recommendations
-                            const recommendations = [
-                                `Enhance semantic HTML structure on ${domain} for better AI comprehension`,
-                                `Add more descriptive metadata to key pages on ${domain}`,
-                                `Improve content clarity with more structured headings`,
-                                `Implement AI-friendly navigation structure`,
-                                `Add structured data markup to improve AI understanding of ${domain}'s content`,
-                                `Optimize image alt text for AI recognition on ${domain}`
-                            ];
+                            // Scroll to the report preview
+                            sampleReportPreview.scrollIntoView({ behavior: 'smooth', block: 'start' });
                             
-                            // Select 3-4 random recommendations
-                            const numRecommendations = Math.floor(Math.random() * 2) + 3; // 3 or 4
-                            const shuffledRecommendations = recommendations.sort(() => 0.5 - Math.random());
-                            const selectedRecommendations = shuffledRecommendations.slice(0, numRecommendations);
+                            // Simulate loading time (1.5 seconds)
+                            setTimeout(function() {
+                                // Update report with domain info
+                                reportDomain.textContent = domain;
+                                reportDomainRec.textContent = domain;
+                                
+                                // Generate a semi-random score between 55-85
+                                const baseScore = 55;
+                                const randomAddition = Math.floor(Math.random() * 30);
+                                const score = baseScore + randomAddition;
+                                reportScore.innerHTML = score + '<span>/100</span>';
+                                
+                                // Generate semi-personalized recommendations
+                                const recommendations = [
+                                    `Enhance semantic HTML structure on ${domain} for better AI comprehension`,
+                                    `Add more descriptive metadata to key pages on ${domain}`,
+                                    `Improve content clarity with more structured headings`,
+                                    `Implement AI-friendly navigation structure`,
+                                    `Add structured data markup to improve AI understanding of ${domain}'s content`,
+                                    `Optimize image alt text for AI recognition on ${domain}`
+                                ];
+                                
+                                // Select 3-4 random recommendations
+                                const numRecommendations = Math.floor(Math.random() * 2) + 3; // 3 or 4
+                                const shuffledRecommendations = recommendations.sort(() => 0.5 - Math.random());
+                                const selectedRecommendations = shuffledRecommendations.slice(0, numRecommendations);
+                                
+                                // Update recommendations list
+                                recommendationsList.innerHTML = '';
+                                selectedRecommendations.forEach(rec => {
+                                    const li = document.createElement('li');
+                                    li.textContent = rec;
+                                    recommendationsList.appendChild(li);
+                                });
+                                
+                                // Hide loading indicator and show report content
+                                loadingIndicator.style.display = 'none';
+                                reportContent.style.display = 'block';
+                            }, 1500);
                             
-                            // Update recommendations list
-                            recommendationsList.innerHTML = '';
-                            selectedRecommendations.forEach(rec => {
-                                const li = document.createElement('li');
-                                li.textContent = rec;
-                                recommendationsList.appendChild(li);
-                            });
-                            
-                            // Hide loading indicator and show report content
-                            loadingIndicator.style.display = 'none';
-                            reportContent.style.display = 'block';
-                        }, 1500);
+                        } catch (error) {
+                            alert('Please enter a valid website URL');
+                            console.error('URL parsing error:', error);
+                        }
+                    });
+                }
+                
+                // Connection Test functionality
+                const verifyConnectionBtn = document.getElementById('verify-connection-btn');
+                const connectionTestUrl = document.getElementById('connection-test-url');
+                const testSuccessResult = document.getElementById('test-success-result');
+                const testFailureResult = document.getElementById('test-failure-result');
+                const successDomain = document.getElementById('success-domain');
+                const failureDomain = document.getElementById('failure-domain');
+                const troubleshootingToggle = document.getElementById('troubleshooting-toggle');
+                const troubleshootingContent = document.getElementById('troubleshooting-content');
+                const tryAgainBtn = document.getElementById('try-again-btn');
+                const viewSampleReportBtn = document.getElementById('view-sample-report-btn');
+                
+                // Troubleshooting toggle functionality
+                if (troubleshootingToggle && troubleshootingContent) {
+                    troubleshootingToggle.addEventListener('click', function() {
+                        troubleshootingContent.classList.toggle('active');
+                    });
+                }
+                
+                // Try again button functionality
+                if (tryAgainBtn) {
+                    tryAgainBtn.addEventListener('click', function() {
+                        testFailureResult.style.display = 'none';
+                    });
+                }
+                
+                // View sample report button functionality
+                if (viewSampleReportBtn) {
+                    viewSampleReportBtn.addEventListener('click', function() {
+                        // Switch to sample report tab
+                        document.querySelector('.tab-btn[data-tab="sample-report"]').click();
+                        // Trigger the generate report button
+                        if (websiteUrlInput && connectionTestUrl.value) {
+                            websiteUrlInput.value = connectionTestUrl.value;
+                            generateReportBtn.click();
+                        }
+                    });
+                }
+                
+                // Verify connection button functionality
+                if (verifyConnectionBtn) {
+                    verifyConnectionBtn.addEventListener('click', function() {
+                        // Get the URL input
+                        let url = connectionTestUrl.value.trim();
                         
-                    } catch (error) {
-                        alert('Please enter a valid website URL');
-                        console.error('URL parsing error:', error);
-                    }
-                });
+                        // Basic URL validation
+                        if (!url) {
+                            alert('Please enter a valid website URL');
+                            return;
+                        }
+                        
+                        // Add http:// if not present
+                        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                            url = 'https://' + url;
+                            connectionTestUrl.value = url;
+                        }
+                        
+                        try {
+                            // Extract domain name for display
+                            const urlObj = new URL(url);
+                            const domain = urlObj.hostname.replace('www.', '');
+                            
+                            // Hide any previous results
+                            testSuccessResult.style.display = 'none';
+                            testFailureResult.style.display = 'none';
+                            
+                            // Simulate loading time (1-2 seconds)
+                            const loadingTime = Math.floor(Math.random() * 1000) + 1000;
+                            
+                            // Simulate a random result (70% success rate for demo purposes)
+                            const isSuccess = Math.random() > 0.3;
+                            
+                            setTimeout(function() {
+                                // Update domain in results
+                                successDomain.textContent = domain;
+                                failureDomain.textContent = domain;
+                                
+                                // Show appropriate result
+                                if (isSuccess) {
+                                    testSuccessResult.style.display = 'block';
+                                } else {
+                                    testFailureResult.style.display = 'block';
+                                    // Reset troubleshooting section
+                                    troubleshootingContent.classList.remove('active');
+                                }
+                                
+                                // Scroll to the result
+                                (isSuccess ? testSuccessResult : testFailureResult).scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }, loadingTime);
+                            
+                        } catch (error) {
+                            alert('Please enter a valid website URL');
+                            console.error('URL parsing error:', error);
+                        }
+                    });
+                }
             }
             
             // Function to initialize smooth scrolling
