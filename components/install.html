@@ -320,6 +320,272 @@
         .registration-box {
             position: relative;
         }
+        
+        /* Sample Report Box Styles */
+        .sample-report-box {
+            position: relative;
+            background: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-top: 2.5rem;
+            overflow: hidden;
+        }
+        
+        .sample-report-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+        }
+        
+        .generate-report-btn {
+            display: block;
+            width: 100%;
+            background: #8b5cf6;
+            color: white;
+            font-weight: 600;
+            padding: 0.875rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 1rem;
+        }
+        
+        .generate-report-btn:hover {
+            background: #7c3aed;
+        }
+        
+        .url-input-field input {
+            padding-left: 2.5rem;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%238b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>');
+            background-repeat: no-repeat;
+            background-position: 0.75rem center;
+        }
+        
+        /* Loading Indicator */
+        .loading-indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 0;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(139, 92, 246, 0.1);
+            border-left-color: #8b5cf6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Report Content Styles */
+        .report-content {
+            background: #f8fafc;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        
+        .report-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #1e293b;
+            color: white;
+            padding: 1rem 1.5rem;
+        }
+        
+        .report-logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .report-title {
+            font-weight: 600;
+        }
+        
+        .report-date {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+        
+        .report-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .report-domain {
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: #1e293b;
+        }
+        
+        .report-score-container {
+            text-align: center;
+        }
+        
+        .report-score-label {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        
+        .report-score {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #8b5cf6;
+        }
+        
+        .report-score span {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.6;
+        }
+        
+        .report-metrics {
+            padding: 1.5rem;
+            background: white;
+        }
+        
+        .metric-item {
+            margin-bottom: 1.25rem;
+        }
+        
+        .metric-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .metric-title {
+            font-weight: 500;
+            margin-bottom: 0.375rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .metric-value {
+            font-weight: 600;
+            color: #1e293b;
+            text-align: right;
+            margin-bottom: 0.375rem;
+        }
+        
+        .metric-bar {
+            height: 0.5rem;
+            background: #e2e8f0;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+        
+        .metric-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+            border-radius: 9999px;
+        }
+        
+        .report-recommendations {
+            padding: 1.5rem;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .report-recommendations h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        
+        .report-recommendations ul {
+            padding-left: 1.5rem;
+        }
+        
+        .report-recommendations li {
+            margin-bottom: 0.5rem;
+            color: #334155;
+        }
+        
+        .report-chart {
+            padding: 1.5rem;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .report-chart h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        
+        .chart-container {
+            display: flex;
+            align-items: flex-end;
+            height: 150px;
+            gap: 1rem;
+            padding-top: 1rem;
+        }
+        
+        .chart-bar {
+            flex: 1;
+            background: linear-gradient(180deg, #8b5cf6, #a78bfa);
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            min-height: 20px;
+        }
+        
+        .chart-bar.current {
+            height: 40%;
+        }
+        
+        .chart-bar.week1 {
+            height: 55%;
+        }
+        
+        .chart-bar.week2 {
+            height: 65%;
+        }
+        
+        .chart-bar.week4 {
+            height: 80%;
+        }
+        
+        .chart-bar.week8 {
+            height: 95%;
+        }
+        
+        .chart-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            white-space: nowrap;
+            color: #64748b;
+        }
+        
+        .report-footer {
+            padding: 1rem 1.5rem;
+            background: #f1f5f9;
+            font-size: 0.875rem;
+            color: #64748b;
+            text-align: center;
+        }
     </style>
 
 
@@ -402,6 +668,92 @@
                     <button class="start-reports-btn">Start Getting Free Reports</button>
                 </div>
             </div>
+            
+            <div class="sample-report-box">
+                <div class="demo-badge">PREVIEW</div>
+                <div class="sample-report-header">See What Your Weekly Report Will Look Like</div>
+                <div class="sample-report-form">
+                    <div class="form-description">Enter your website URL to generate a sample AI visibility report</div>
+                    <div class="form-field url-input-field">
+                        <label>Website URL</label>
+                        <input type="url" id="website-url" placeholder="https://yourwebsite.com" />
+                    </div>
+                    <button class="generate-report-btn" id="generate-report-btn">Generate Sample Report</button>
+                </div>
+                
+                <div class="sample-report-preview" id="sample-report-preview" style="display: none;">
+                    <div class="loading-indicator" id="loading-indicator">
+                        <div class="spinner"></div>
+                        <p>Analyzing website and generating report...</p>
+                    </div>
+                    
+                    <div class="report-content" id="report-content" style="display: none;">
+                        <div class="report-header">
+                            <div class="report-logo">AHP</div>
+                            <div class="report-title">AI Visibility Report</div>
+                            <div class="report-date">Sample Preview</div>
+                        </div>
+                        
+                        <div class="report-summary">
+                            <div class="report-domain" id="report-domain">yourwebsite.com</div>
+                            <div class="report-score-container">
+                                <div class="report-score-label">AI Visibility Score</div>
+                                <div class="report-score" id="report-score">68<span>/100</span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="report-metrics">
+                            <div class="metric-item">
+                                <div class="metric-title">AI Recognition Rate</div>
+                                <div class="metric-value">72%</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill" style="width: 72%"></div>
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-title">Content Clarity</div>
+                                <div class="metric-value">84%</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill" style="width: 84%"></div>
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-title">Semantic Structure</div>
+                                <div class="metric-value">59%</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill" style="width: 59%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="report-recommendations">
+                            <h3>Recommendations for <span id="report-domain-rec">yourwebsite.com</span></h3>
+                            <ul id="recommendations-list">
+                                <li>Enhance semantic HTML structure for better AI comprehension</li>
+                                <li>Add more descriptive metadata to key pages</li>
+                                <li>Improve content clarity with more structured headings</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="report-chart">
+                            <h3>Visibility Trend (Projected)</h3>
+                            <div class="chart-container">
+                                <div class="chart-bar current"><span class="chart-label">Current</span></div>
+                                <div class="chart-bar week1"><span class="chart-label">Week 1</span></div>
+                                <div class="chart-bar week2"><span class="chart-label">Week 2</span></div>
+                                <div class="chart-bar week4"><span class="chart-label">Week 4</span></div>
+                                <div class="chart-bar week8"><span class="chart-label">Week 8</span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="report-footer">
+                            <p>This is a sample report. Actual weekly reports will contain more detailed analysis and personalized recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+<!-- JavaScript for this component has been moved to index.html -->
