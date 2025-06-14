@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Landing page hosted at land1.aihandshake.org -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AHP MOD 2.0 – Be Visible to AI</title>
+  <meta name="description" content="AHP MOD 2.0 shows you what AI sees—and how to fix it.">
+  
+  <!-- Security headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()">
+  
+  <!-- Canonical and SEO -->
+  <link rel="canonical" href="https://land1.aihandshake.org" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:url" content="https://land1.aihandshake.org">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AHP MOD 2.0 – Be Visible to AI">
+  <meta property="og:description" content="AHP MOD 2.0 shows you what AI sees—and how to fix it.">
+  <meta property="og:image" content="https://land1.aihandshake.org/social-preview.png">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AHP MOD 2.0">
+  <meta name="twitter:description" content="Shows you what AI sees—and how to fix it.">
+  <meta name="twitter:image" content="https://land1.aihandshake.org/social-preview.png">
+  
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <style>
+    @keyframes gradientFlow {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    
+    @keyframes pulse {
+      0% {
+        opacity: 0.6;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.6;
+      }
+    }
+    
+    :root {
+      --primary: #8b5cf6;
+      --primary-light: #a78bfa;
+      --primary-dark: #7c3aed;
+      --secondary: #10b981;
+      --secondary-light: #34d399;
+      --accent: #f59e0b;
+      --accent-light: #fbbf24;
+      --dark: #0f172a;
+      --dark-light: #1e293b;
+      --gray-dark: #4b5563;
+      --gray: #9ca3af;
+      --gray-light: #e5e7eb;
+      --light: #f9fafb;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #0f172a, #1e293b);
+      color: white;
+      line-height: 1.6;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    /* Enhanced gradient background effects */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 50%;
+      background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15), transparent 70%);
+      filter: blur(100px);
+      z-index: 1;
+      animation: pulse 8s infinite ease-in-out;
+    }
+    
+    body::after {
+      content: "";
+      position: absolute;
+      bottom: 10%;
+      right: 20%;
+      width: 40%;
+      height: 40%;
+      background: radial-gradient(circle at center, rgba(16, 185, 129, 0.08), transparent 70%);
+      filter: blur(80px);
+      z-index: 1;
+      pointer-events: none;
+      animation: pulse 12s infinite ease-in-out reverse;
+    }
+    
+    .bg-accent {
+      content: "";
+      position: absolute;
+      top: 60%;
+      left: 20%;
+      width: 30%;
+      height: 30%;
+      background: radial-gradient(circle at center, rgba(245, 158, 11, 0.07), transparent 70%);
+      filter: blur(80px);
+      z-index: 1;
+      pointer-events: none;
+      animation: pulse 15s infinite ease-in-out 1s;
+    }
+    
+    /* Removed header/navbar styles */
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 5rem;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .content-wrapper {
+      width: 100%;
+      max-width: 900px;
+      text-align: left;
+    }
+    
+    .hero-image-container {
+      width: 100%;
+      max-width: 900px;
+      margin: 3rem 0 4rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      background-color: var(--dark);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .hero-image-container::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 1rem;
+      padding: 2px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.5), rgba(16, 185, 129, 0.2));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    
+    .hero-image-container:hover .hero-image {
+      transform: scale(1.02);
+    }
+    
+    .headline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.04em;
+      max-width: 900px;
+      position: relative;
+    }
+    
+    .headline .gradient {
+      background: linear-gradient(135deg, #8b5cf6, #a78bfa, #c4b5fd);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    .headline .white {
+      color: white;
+    }
+    
+    .subhead {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 4rem;
+      max-width: 650px;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+    
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-top: 4.5rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #8b5cf6, #a78bfa, #c4b5fd);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+      position: relative;
+      display: inline-block;
+      animation: gradientFlow 6s ease infinite;
+    }
+    
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 3rem;
+      height: 0.25rem;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      border-radius: 0.125rem;
+    }
+    
+    p {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    ul {
+      margin-bottom: 2rem;
+      padding-left: 2rem;
+    }
+    
+    li {
+      font-size: 1.125rem;
+      margin-bottom: 0.75rem;
+      color: rgba(255, 255, 255, 0.9);
+      position: relative;
+      list-style: none;
+      padding-left: 1.5rem;
+    }
+    
+    li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+    }
+    
+    code {
+      font-family: monospace;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--primary-light);
+      font-size: 0.95rem;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    
+    code:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem 2.75rem;
+      background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+      background-size: 200% auto;
+      color: white;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      font-size: 1.125rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 6px 12px -2px rgba(139, 92, 246, 0.25), 0 3px 7px -3px rgba(139, 92, 246, 0.1);
+      letter-spacing: 0.02em;
+      margin-top: 4rem;
+      position: relative;
+      overflow: hidden;
+      animation: gradientFlow 3s ease infinite;
+    }
+    
+    .cta::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: all 0.6s ease;
+    }
+    
+    .cta:hover {
+      background: linear-gradient(135deg, #7c3aed, #9061f9);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px -4px rgba(139, 92, 246, 0.4), 0 8px 12px -3px rgba(139, 92, 246, 0.2);
+    }
+    
+    .cta:hover::before {
+      left: 100%;
+    }
+    
+    .highlight {
+      color: #8b5cf6;
+      font-weight: 700;
+    }
+    
+    strong {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--primary-light);
+    }
+    
+    .highlight-box {
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      background: rgba(139, 92, 246, 0.05);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin: 2.5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .highlight-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+    }
+    
+    .highlight-box p {
+      margin: 0;
+    }
+    
+    /* Comparison Table Styles */
+    .comparison-section {
+      margin: 5rem 0 3rem;
+      width: 100%;
+    }
+    
+    .comparison-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    
+    .comparison-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .comparison-table th {
+      background: rgba(139, 92, 246, 0.15);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: white;
+    }
+    
+    .comparison-table th:first-child {
+      width: 40%;
+    }
+    
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .comparison-table td:first-child {
+      font-weight: 600;
+    }
+    
+    .comparison-check {
+      color: var(--secondary);
+      font-size: 1.25rem;
+    }
+    
+    .comparison-x {
+      color: #ef4444;
+      font-size: 1.25rem;
+    }
+    
+    .comparison-highlight {
+      position: relative;
+    }
+    
+    .comparison-highlight::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+    }
+    
+    /* Testimonials Section Styles */
+    .testimonials-section {
+      margin: 5rem 0;
+      width: 100%;
+    }
+    
+    .testimonials-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      width: 100%;
+    }
+    
+    .testimonial-card {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      line-height: 1;
+      opacity: 0.1;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .testimonial-content {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      margin-top: auto;
+    }
+    
+    .testimonial-avatar {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 1rem;
+      border: 2px solid rgba(139, 92, 246, 0.5);
+      background: var(--dark);
+    }
+    
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .testimonial-info {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: white;
+    }
+    
+    .testimonial-title {
+      font-size: 0.875rem;
+      color: var(--primary-light);
+    }
+    
+    /* URL Check Widget Styles */
+    .url-check-section {
+      margin: 5rem 0;
+      width: 100%;
+    }
+    
+    .url-check-container {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      padding: 2.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .url-check-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--secondary));
+      background-size: 200% 100%;
+      animation: gradientFlow 3s ease infinite;
+    }
+    
+    .url-check-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .url-form {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    .url-input {
+      flex: 1;
+      padding: 1rem 1.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(15, 23, 42, 0.4);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .url-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.3);
+    }
+    
+    .url-input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .url-submit {
+      padding: 1rem 1.5rem;
+      border-radius: 0.5rem;
+      border: none;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    
+    .url-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+    }
+    
+    .sample-report {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    .sample-report.active {
+      display: block;
+      opacity: 1;
+    }
+    
+    .report-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .report-site {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    
+    .report-date {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .report-score-container {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    .report-score-box {
+      flex: 1;
+      background: rgba(15, 23, 42, 0.4);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .score-label {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 0.5rem;
+    }
+    
+    .score-value {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .report-recommendations {
+      margin-bottom: 2.5rem;
+    }
+    
+    .report-section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    
+    .recommendation-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .recommendation-item {
+      display: flex;
+      align-items: flex-start;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .recommendation-item:last-child {
+      border-bottom: none;
+    }
+    
+    .recommendation-icon {
+      margin-right: 1rem;
+      color: var(--secondary);
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    
+    .recommendation-text {
+      flex: 1;
+    }
+    
+    .report-chart {
+      height: 250px;
+      margin-bottom: 1rem;
+    }
+    
+    .chart-container {
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+    
+    .chart-legend {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      font-size: 0.875rem;
+    }
+    
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      margin-right: 0.5rem;
+    }
+    
+    .legend-before {
+      background-color: rgba(239, 68, 68, 0.7);
+    }
+    
+    .legend-after {
+      background-color: rgba(139, 92, 246, 0.7);
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 1024px) {
+      .container {
+        padding: 5rem 2rem 4rem;
+      }
+      
+      .headline {
+        font-size: 3.75rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 4rem 1.5rem 3rem;
+      }
+      
+      .headline {
+        font-size: 3rem;
+      }
+      
+      .section-title {
+        font-size: 1.75rem;
+      }
+      
+      .cta {
+        padding: 1.125rem 2.25rem;
+        font-size: 1rem;
+        width: 100%;
+        text-align: center;
+      }
+      
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .comparison-table {
+        font-size: 0.875rem;
+      }
+      
+      .comparison-table th,
+      .comparison-table td {
+        padding: 1rem;
+      }
+      
+      .url-form {
+        flex-direction: column;
+      }
+      
+      .url-submit {
+        width: 100%;
+      }
+      
+      .report-score-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .headline {
+        font-size: 2.5rem;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      p, li {
+        font-size: 1rem;
+      }
+      
+      .highlight-box {
+        padding: 1.25rem;
+        margin: 2rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header removed -->
+
+  <div class="container">
+    <div class="content-wrapper">
+      <h1 class="headline"><span class="gradient">AI</span> <span class="white">Isn't Clicking.</span> <span class="gradient">It's Summarizing.</span></h1>
+      <p class="subhead">AHP MOD 2.0 shows you what bots see—and how to fix it.</p>
+      
+      <div class="hero-image-container">
+        <img src="images/LOGO for text w url .png" alt="Make Your Website Visible to AI Systems - AHP MOD 2.0" class="hero-image">
+      </div>
+
+    <h2 class="section-title">AI Doesn't Browse. It Rewrites.</h2>
+    <p>If your site's not bot-ready, you're invisible.</p>
+
+    <h2 class="section-title">Know What Bots See</h2>
+    <p>Installs fast. Analyzes deeper.</p>
+    <ul>
+      <li>What bots see</li>
+      <li>What they skip</li>
+      <li>How to fix it</li>
+    </ul>
+
+    <h2 class="section-title">Be the Answer</h2>
+    <p>Search is gone. Answers win. AHP makes your site the answer.</p>
+
+    <h2 class="section-title">Bots Already Visit. You Just Don't Know What They See.</h2>
+    <p>AHP gives you the visibility to find out—and the tools to improve it.</p>
+
+    <h2 class="section-title">Create a Bot-Ready Version of Your Site</h2>
+    <p>Structured. Fast. Invisible to humans—clear to machines.</p>
+    <ul>
+      <li>Bot-facing endpoints like <code>/ai-profile</code> or <code>/llms.txt</code></li>
+      <li>Content designed for token-efficiency and clarity</li>
+      <li>Zero-fluff formatting, optimized for AI readers</li>
+    </ul>
+
+    <h2 class="section-title">AI Is Changing the Web</h2>
+    <p>AHP keeps you seen, clear, and chosen.</p>
+
+    <div class="highlight-box">
+      <p><strong>Know what AI sees. Control what it says.</strong></p>
+    </div>
+    
+    <!-- Comparison Table Section -->
+    <div class="comparison-section">
+      <h2 class="section-title comparison-title">How AHP Makes the Difference</h2>
+      
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Without AHP</th>
+            <th>With AHP MOD 2.0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AI Visibility Score</td>
+            <td>Average 42%</td>
+            <td class="comparison-highlight">Average 87%</td>
+          </tr>
+          <tr>
+            <td>Content Recognition</td>
+            <td><span class="comparison-x">✕</span> Partial & Inconsistent</td>
+            <td class="comparison-highlight"><span class="comparison-check">✓</span> Complete & Accurate</td>
+          </tr>
+          <tr>
+            <td>Bot-Friendly Structure</td>
+            <td><span class="comparison-x">✕</span> Missing</td>
+            <td class="comparison-highlight"><span class="comparison-check">✓</span> Optimized</td>
+          </tr>
+          <tr>
+            <td>Token Efficiency</td>
+            <td>Low (Wasted Context)</td>
+            <td class="comparison-highlight">High (Optimized)</td>
+          </tr>
+          <tr>
+            <td>AI Summarization Quality</td>
+            <td>Unpredictable</td>
+            <td class="comparison-highlight">Consistent & Accurate</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Testimonials Section -->
+    <div class="testimonials-section">
+      <h2 class="section-title testimonials-title">What Our Users Are Saying</h2>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-content">"After implementing AHP MOD 2.0, our website's visibility to AI systems increased by 215%. Our content is now being accurately represented in AI responses, driving significant new traffic."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <img src="images/social/LOGO for text.png" alt="Sarah Johnson">
+            </div>
+            <div class="testimonial-info">
+              <span class="testimonial-name">Sarah Johnson</span>
+              <span class="testimonial-title">Digital Marketing Director</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-content">"The difference is night and day. Before AHP, AI systems were completely missing our key product features. Now they're accurately summarizing our offerings and sending qualified leads our way."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <img src="images/social/LOGO for text.png" alt="Michael Chen">
+            </div>
+            <div class="testimonial-info">
+              <span class="testimonial-name">Michael Chen</span>
+              <span class="testimonial-title">CTO, TechSolutions Inc.</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-content">"As a content creator, I was frustrated that AI tools were misrepresenting my work. AHP MOD 2.0 fixed that problem completely. Now my content is seen exactly as intended."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <img src="images/social/LOGO for text.png" alt="Aisha Patel">
+            </div>
+            <div class="testimonial-info">
+              <span class="testimonial-name">Aisha Patel</span>
+              <span class="testimonial-title">Content Strategy Lead</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- URL Check Widget Section -->
+    <div class="url-check-section">
+      <h2 class="section-title url-check-title">See How Your Site Performs</h2>
+      
+      <div class="url-check-container">
+        <form class="url-form" id="urlCheckForm">
+          <input type="url" class="url-input" id="urlInput" placeholder="Enter your website URL (e.g., https://example.com)" required>
+          <button type="submit" class="url-submit">Check Now</button>
+        </form>
+        
+        <div class="sample-report" id="sampleReport">
+          <div class="report-header">
+            <div class="report-site" id="reportSite">example.com</div>
+            <div class="report-date" id="reportDate">June 14, 2025</div>
+          </div>
+          
+          <div class="report-score-container">
+            <div class="report-score-box">
+              <div class="score-label">AI Visibility Score</div>
+              <div class="score-value" id="visibilityScore">87%</div>
+            </div>
+            <div class="report-score-box">
+              <div class="score-label">Content Recognition</div>
+              <div class="score-value" id="recognitionScore">92%</div>
+            </div>
+            <div class="report-score-box">
+              <div class="score-label">Token Efficiency</div>
+              <div class="score-value" id="tokenScore">78%</div>
+            </div>
+          </div>
+          
+          <div class="report-recommendations">
+            <h3 class="report-section-title">Top Recommendations</h3>
+            <ul class="recommendation-list">
+              <li class="recommendation-item">
+                <span class="recommendation-icon">✓</span>
+                <div class="recommendation-text">Add structured data to your product pages to improve AI understanding of your offerings.</div>
+              </li>
+              <li class="recommendation-item">
+                <span class="recommendation-icon">✓</span>
+                <div class="recommendation-text">Optimize your meta descriptions to better align with your content for improved AI summarization.</div>
+              </li>
+              <li class="recommendation-item">
+                <span class="recommendation-icon">✓</span>
+                <div class="recommendation-text">Implement AHP MOD 2.0 on your blog section to increase visibility by an estimated 35%.</div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="report-chart">
+            <h3 class="report-section-title">Visibility Trend</h3>
+            <div class="chart-container">
+              <canvas id="visibilityChart"></canvas>
+            </div>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <div class="legend-color legend-before"></div>
+                <span>Before AHP</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color legend-after"></div>
+                <span>After AHP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <a href="https://land1.aihandshake.org/analyze" class="cta">See What AI Thinks of Your Site</a>
+    </div>
+  </div>
+  
+  <!-- Footer removed -->
+  <!-- Chart.js for the sample report chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js" integrity="sha384-i4gyM/zs6V5GQCr+qUMUNpVXbvq/xYu+Mg1EWfVVxJKlvpRQQZVUyXl9r9fCW6" crossorigin="anonymous"></script>
+  
+  <script>
+    // URL Check Form Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlForm = document.getElementById('urlCheckForm');
+      const urlInput = document.getElementById('urlInput');
+      const sampleReport = document.getElementById('sampleReport');
+      const reportSite = document.getElementById('reportSite');
+      const reportDate = document.getElementById('reportDate');
+      const visibilityScore = document.getElementById('visibilityScore');
+      const recognitionScore = document.getElementById('recognitionScore');
+      const tokenScore = document.getElementById('tokenScore');
+      
+      // Sample scores for demonstration
+      const sampleScores = {
+        'google.com': { visibility: '95%', recognition: '98%', token: '92%' },
+        'amazon.com': { visibility: '89%', recognition: '91%', token: '85%' },
+        'facebook.com': { visibility: '92%', recognition: '94%', token: '88%' },
+        'twitter.com': { visibility: '87%', recognition: '90%', token: '82%' },
+        'linkedin.com': { visibility: '91%', recognition: '93%', token: '86%' },
+        'netflix.com': { visibility: '88%', recognition: '92%', token: '84%' },
+        'microsoft.com': { visibility: '94%', recognition: '96%', token: '90%' },
+        'apple.com': { visibility: '93%', recognition: '95%', token: '89%' },
+      };
+      
+      // Handle form submission
+      urlForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get the URL and extract domain
+        let url = urlInput.value.trim();
+        let domain = url;
+        
+        // Extract domain from URL
+        if (url.includes('://')) {
+          domain = url.split('://')[1];
+        }
+        if (domain.includes('/')) {
+          domain = domain.split('/')[0];
+        }
+        
+        // Set report site name
+        reportSite.textContent = domain;
+        
+        // Set current date
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        reportDate.textContent = today.toLocaleDateString('en-US', options);
+        
+        // Set scores - use sample data if available, otherwise random
+        let scores;
+        if (sampleScores[domain]) {
+          scores = sampleScores[domain];
+        } else {
+          // Generate random scores between 70-95%
+          const randomScore = () => Math.floor(Math.random() * 25 + 70) + '%';
+          scores = {
+            visibility: randomScore(),
+            recognition: randomScore(),
+            token: randomScore()
+          };
+        }
+        
+        visibilityScore.textContent = scores.visibility;
+        recognitionScore.textContent = scores.recognition;
+        tokenScore.textContent = scores.token;
+        
+        // Show the report with animation
+        sampleReport.classList.add('active');
+        
+        // Initialize or update chart
+        initChart();
+      });
+      
+      // Initialize the visibility trend chart
+      function initChart() {
+        const ctx = document.getElementById('visibilityChart').getContext('2d');
+        
+        // Destroy existing chart if it exists
+        if (window.visibilityChart) {
+          window.visibilityChart.destroy();
+        }
+        
+        // Create chart data - 6 months of data
+        const labels = [];
+        const beforeData = [];
+        const afterData = [];
+        
+        // Generate last 6 months labels
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const today = new Date();
+        for (let i = 5; i >= 0; i--) {
+          const month = today.getMonth() - i;
+          const year = today.getFullYear();
+          const adjustedMonth = month < 0 ? month + 12 : month;
+          const adjustedYear = month < 0 ? year - 1 : year;
+          labels.push(`${months[adjustedMonth]} ${adjustedYear}`);
+          
+          // Generate random data points between 30-50 for before
+          beforeData.push(Math.floor(Math.random() * 20 + 30));
+          
+          // Generate random data points between 70-90 for after
+          afterData.push(Math.floor(Math.random() * 20 + 70));
+        }
+        
+        // Create the chart
+        window.visibilityChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: 'Before AHP',
+                data: beforeData,
+                borderColor: 'rgba(239, 68, 68, 0.7)',
+                backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                tension: 0.4,
+                fill: true
+              },
+              {
+                label: 'After AHP',
+                data: afterData,
+                borderColor: 'rgba(139, 92, 246, 0.7)',
+                backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                tension: 0.4,
+                fill: true
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 100,
+                grid: {
+                  color: 'rgba(255, 255, 255, 0.1)'
+                },
+                ticks: {
+                  color: 'rgba(255, 255, 255, 0.7)'
+                }
+              },
+              x: {
+                grid: {
+                  color: 'rgba(255, 255, 255, 0.1)'
+                },
+                ticks: {
+                  color: 'rgba(255, 255, 255, 0.7)'
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                display: false
+              }
+            }
+          }
+        });
+      }
+    });
+  </script>
+  </body>
+</html>
