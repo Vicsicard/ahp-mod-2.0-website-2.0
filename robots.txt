@@ -1,0 +1,65 @@
+# Global rules for all bots
+User-agent: *
+Allow: /
+
+# Block WordPress-related paths to prevent scanning attempts
+Disallow: /wp-admin/
+Disallow: /wordpress/
+Disallow: /xmlrpc.php
+Disallow: /wp-login.php
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-json/
+Disallow: /wp-config.php
+Disallow: /setup-config.php
+Disallow: /wp-admin/setup-config.php
+
+# Block other common exploit attempts
+Disallow: /admin/
+Disallow: /administrator/
+Disallow: /.env
+Disallow: /.git/
+Disallow: /config/
+Disallow: /install/
+Disallow: /phpmyadmin/
+
+# Allow legitimate search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+# Block known malicious bots
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: Barkrowler
+Disallow: /
+
+User-agent: Seekport
+Disallow: /
+
+# Sitemap location
+Sitemap: https://aihandshake.org/sitemap.xml

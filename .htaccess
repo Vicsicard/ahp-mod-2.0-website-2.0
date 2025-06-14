@@ -1,0 +1,119 @@
+# Block WordPress scanning attempts and other common exploits
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Block WordPress related paths
+RewriteRule ^wp-admin/(.*)$ - [F,L]
+RewriteRule ^wordpress/(.*)$ - [F,L]
+RewriteRule ^xmlrpc\.php$ - [F,L]
+RewriteRule ^wp-login\.php$ - [F,L]
+RewriteRule ^wp-content/(.*)$ - [F,L]
+RewriteRule ^wp-includes/(.*)$ - [F,L]
+RewriteRule ^wp-json/(.*)$ - [F,L]
+RewriteRule ^wp-config\.php$ - [F,L]
+RewriteRule ^setup-config\.php$ - [F,L]
+
+# Block other common exploit attempts
+RewriteRule ^admin/(.*)$ - [F,L]
+RewriteRule ^administrator/(.*)$ - [F,L]
+RewriteRule ^\.env$ - [F,L]
+RewriteRule ^\.git/(.*)$ - [F,L]
+RewriteRule ^config/(.*)$ - [F,L]
+RewriteRule ^install/(.*)$ - [F,L]
+RewriteRule ^phpmyadmin/(.*)$ - [F,L]
+
+# Block suspicious query strings
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} ^.*(\,|\;|\:|\<|\>|\{|\}|\[|\]|\(|\)|\?|\*|\=|\&|\$).* [NC,OR]
+RewriteCond %{QUERY_STRING} ^.*(%22|%27|%3C|%3E|%5C|%7B|%7C|%7D).* [NC,OR]
+RewriteCond %{QUERY_STRING} ^.*(\\|\"|\\).* [NC,OR]
+RewriteCond %{QUERY_STRING} ^.*(\.\./|\.\.\\).* [NC,OR]
+RewriteCond %{QUERY_STRING} ^.*(localhost|loopback|127\.0\.0\.1).* [NC,OR]
+RewriteCond %{QUERY_STRING} ^.*(<|>|%0A|%0D|%27|%3C|%3E|%00).* [NC]
+RewriteRule .* - [F,L]
+
+# Block bad user agents
+RewriteCond %{HTTP_USER_AGENT} ^.*(dirbuster|nikto|sqlmap|scanbot|wpscan|nmap|acunetix|havij).* [NC]
+RewriteRule .* - [F,L]
+</IfModule>
+
+# Enable browser caching
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/gif "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType text/javascript "access plus 1 month"
+ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# Compress text files
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+</IfModule>
+
+# Enhanced security headers
+<IfModule mod_headers.c>
+    # Basic security headers
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    
+    # Content Security Policy
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'"
+    
+    # Referrer Policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissions Policy
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    
+    # Remove server signature
+    Header unset Server
+    Header always unset X-Powered-By
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes
+
+# Protect against MIME type sniffing
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# Protect .htaccess and other sensitive files
+<FilesMatch "^\.(htaccess|htpasswd|git|env|config|log)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Custom error pages
+ErrorDocument 400 /index.html
+ErrorDocument 401 /index.html
+ErrorDocument 403 /index.html
+ErrorDocument 404 /index.html
+ErrorDocument 500 /index.html
+ErrorDocument 502 /index.html
+ErrorDocument 503 /index.html
+
+# Limit request methods
+<LimitExcept GET POST HEAD>
+    Order Allow,Deny
+    Deny from all
+</LimitExcept>
+
+# Rate limiting - basic protection against DoS attacks
+<IfModule mod_evasive20.c>
+    DOSHashTableSize 3097
+    DOSPageCount 5
+    DOSSiteCount 50
+    DOSPageInterval 1
+    DOSSiteInterval 1
+    DOSBlockingPeriod 60
+</IfModule>
