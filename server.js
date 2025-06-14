@@ -119,8 +119,62 @@ let cachedIndexHtml = null;
 let lastCacheTime = 0;
 const CACHE_DURATION = 60 * 60 * 1000; // 1 hour in milliseconds
 
+// Check hostname to determine if request is for landing page subdomain
+app.use((req, res, next) => {
+  // Extract hostname from request
+  const hostname = req.hostname || req.headers.host || '';
+  const path = req.path;
+  console.log('Request hostname:', hostname, 'Path:', path);
+  
+  // Add hostname to request object for use in routes
+  // Check both subdomain and specific path for landing page
+  req.isLandingPageSubdomain = hostname.startsWith('land1.') || path === '/landing';
+  next();
+});
+
+// Specific route for landing page testing locally
+app.get('/landing', (req, res) => {
+  try {
+    const landingPagePath = path.join(__dirname, 'landing-page', 'ahp-landing-page.html');
+    console.log('Serving landing page from:', landingPagePath);
+    
+    if (fs.existsSync(landingPagePath)) {
+      const landingPageHtml = fs.readFileSync(landingPagePath, 'utf8');
+      return res.send(landingPageHtml);
+    } else {
+      console.error('Landing page file not found at:', landingPagePath);
+      return res.status(404).send('Landing page not found');
+    }
+  } catch (err) {
+    console.error('Error serving landing page:', err);
+    return res.status(500).send('Server error');
+  }
+});
+
+// Landing page route - will be served when subdomain is land1.aihandshake.org
 app.get('/', (req, res) => {
-  console.log('Received request for /');
+  console.log('Received request for /', req.isLandingPageSubdomain ? 'from landing page subdomain' : 'from main domain');
+  
+  // If request is from landing page subdomain, serve the landing page
+  if (req.isLandingPageSubdomain) {
+    try {
+      const landingPagePath = path.join(__dirname, 'landing-page', 'ahp-landing-page.html');
+      console.log('Serving landing page from:', landingPagePath);
+      
+      if (fs.existsSync(landingPagePath)) {
+        const landingPageHtml = fs.readFileSync(landingPagePath, 'utf8');
+        return res.send(landingPageHtml);
+      } else {
+        console.error('Landing page file not found at:', landingPagePath);
+        return res.status(404).send('Landing page not found');
+      }
+    } catch (err) {
+      console.error('Error serving landing page:', err);
+      return res.status(500).send('Server error');
+    }
+  }
+  
+  // Main website handling (original code)
   try {
     const currentTime = Date.now();
     
